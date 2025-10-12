@@ -4,6 +4,7 @@
 using namespace std;
 
 int main() {
+
     cout << "Mohammad\n" << "Ayan" << endl;
 
     return 0;
