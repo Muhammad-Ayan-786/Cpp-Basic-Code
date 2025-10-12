@@ -12,6 +12,5 @@ int main() {
     int newPrice = (int)price;
     cout << newPrice << endl;
 
-
     return 0;
 }
