@@ -5,17 +5,17 @@ using namespace std;
 
 int main() {
     int n = 6;
-    bool isPrime = 1;
+    bool isPrime = true;
 
     for (int i = 2; i * i <= n; i++)
     {
         if (n % i == 0) {
-            isPrime = 0;
+            isPrime = false;
             break;
         }
     }
 
-    if (isPrime) {
+    if (isPrime == true) {
         cout << n << " It's Prime." << endl;
     }
     else {
