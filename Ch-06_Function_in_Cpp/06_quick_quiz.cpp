@@ -24,7 +24,8 @@ bool checkPrime (int num) {
 }
 
 // Code func of 2 ...
-void writePrime (int num) {
+void printPrime (int num) {
+    cout << "Prime number: ";
     for (int i = 2; i <= num; i++) {
         bool isPrime = true;
 
@@ -38,17 +39,31 @@ void writePrime (int num) {
         if (isPrime) {
             cout << i << " ";
         }
-    }    
+    }
+    cout << endl;
+}
+
+// Code func of 3 ...
+int fibonacci (int num) {
+    if (num == 0) return 0;
+    if (num == 1) return 1;
+
+    return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
 int main() {
-    int n = 5;
+    int n = 6;
 
     // Code of 1 ...
     bool primeCheck = checkPrime(n);
-    // cout << n << (primeCheck ? ": Prime" : ": Not Prime") << endl;
+    cout << n << (primeCheck ? ": Prime" : ": Not Prime") << endl;
 
-    writePrime(n);
+    // Code of 2 ...
+    printPrime(n);
+
+    // Code of 3 ...
+    cout << "Fibonacci sequence of " << n << " is " << fibonacci(n) << endl;
+
 
     return 0;
 }
