@@ -4,51 +4,6 @@ This document covers the process of converting decimal numbers to binary and exp
 
 ---
 
-## Decimal to Binary Conversion
-
-This section demonstrates the process of converting decimal numbers to binary using the **repeated division-by-2** method.
-
-### Method: Repeated Division by 2
-
-To convert a decimal number to binary:
-1. Continuously divide the number by 2.
-2. Record the remainder (which will be either 0 or 1) after each division.
-3. The binary equivalent is read as the sequence of remainders **from the last one obtained to the first**.
-
-### Conversion Examples
-
-#### Example 1: Convert (42)₁₀ to Binary
-
-| Division | Quotient | Remainder |
-| :------- | :------- | :-------- |
-| 42 / 2   | 21       | **0**     |
-| 21 / 2   | 10       | **1**     |
-| 10 / 2   | 5        | **0**     |
-| 5 / 2    | 2        | **1**     |
-| 2 / 2    | 1        | **0**     |
-| 1 / 2    | 0        | **1**     |
-
-**Reading the remainders from bottom to top gives the binary equivalent.**
-
-**Result:** (42)₁₀ = **(101010)₂**
-
-#### Example 2: Convert (50)₁₀ to Binary
-
-| Division | Quotient | Remainder |
-| :------- | :------- | :-------- |
-| 50 / 2   | 25       | **0**     |
-| 25 / 2   | 12       | **1**     |
-| 12 / 2   | 6        | **0**     |
-| 6 / 2    | 3        | **0**     |
-| 3 / 2    | 1        | **1**     |
-| 1 / 2    | 0        | **1**     |
-
-**Reading the remainders from bottom to top gives the binary equivalent.**
-
-**Result:** (50)₁₀ = **(110010)₂**
-
----
-
 ## Bitwise Operators
 
 This section explains the functionality of basic bitwise operators in programming and digital logic.
@@ -146,145 +101,96 @@ d = 7  →  111
 
 These fundamental operations are essential for low-level programming, digital circuit design, and computer architecture.
 
+## Bitwise `<<` (Left Shift Operator)
 
-
-
-
-
-
-<!-- # Digital Logic Fundamentals
-
-This document covers the process of converting decimal numbers to binary and explains the functionality of basic bitwise operators.
+### Syntax:
+```
+n << i
+```
+> Shifts the binary form of `n` by `i` places to the **left**.
 
 ---
 
-## Decimal to Binary Conversion
-
-This section demonstrates the process of converting decimal numbers to binary using the **repeated division-by-2** method.
-
-### Method: Repeated Division by 2
-
-To convert a decimal number to binary:
-1. Continuously divide the number by 2.
-2. Record the remainder (which will be either 0 or 1) after each division.
-3. The binary equivalent is read as the sequence of remainders **from the last one obtained to the first**.
-
-### Conversion Examples
-
-#### Example 1: Convert (42)₁₀ to Binary
-
-| Division | Quotient | Remainder |
-| :------- | :------- | :-------- |
-| 42 / 2   | 21       | **0**     |
-| 21 / 2   | 10       | **1**     |
-| 10 / 2   | 5        | **0**     |
-| 5 / 2    | 2        | **1**     |
-| 2 / 2    | 1        | **0**     |
-| 1 / 2    | 0        | **1**     |
-
-**Reading the remainders from bottom to top gives the binary equivalent.**
-
-**Result:** (42)₁₀ = **(101010)₂**
-
-#### Example 2: Convert (50)₁₀ to Binary
-
-| Division | Quotient | Remainder |
-| :------- | :------- | :-------- |
-| 50 / 2   | 25       | **0**     |
-| 25 / 2   | 12       | **1**     |
-| 12 / 2   | 6        | **0**     |
-| 6 / 2    | 3        | **0**     |
-| 3 / 2    | 1        | **1**     |
-| 1 / 2    | 0        | **1**     |
-
-**Reading the remainders from bottom to top gives the binary equivalent.**
-
-**Result:** (50)₁₀ = **(110010)₂**
+### Example 1:
+```
+n = 4
+n << 1
+```
+Binary:
+```
+100  →  1000
+```
+Result:
+```
+(8)₁₀
+```
 
 ---
 
-## Bitwise Operators
+### Example 2:
+```
+10 << 2
+```
+Binary:
+```
+1010  →  101000
+```
+Result:
+```
+(40)₁₀
+```
 
-This section explains the functionality of basic bitwise operators in programming and digital logic.
+---
 
-### Bitwise AND (`&`)
+## Bitwise `>>` (Right Shift Operator)
 
-The bitwise AND operator compares each bit of its first operand to the corresponding bit of its second operand. If both bits are 1, the corresponding result bit is set to 1. Otherwise, the result bit is set to 0.
+### Syntax:
+```
+n >> i
+```
+> Shifts the binary form of `n` by `i` places to the **right**.
 
-#### Truth Table
-| A | B | A & B |
-|:-:|:-:|:-----:|
-| 0 | 0 |   0   |
-| 1 | 0 |   0   |
-| 0 | 1 |   0   |
-| 1 | 1 |   1   |
+---
 
-#### Example: `a = 4, b = 8`
+### Example 1:
+```
+10 >> 1
+```
+Binary:
+```
+1010  →  0101
+```
+Result:
+```
+(5)₁₀
+```
 
-a = 4  →  0100
-b = 8  →  1000
-            &
-         ----
-          0000  → (0)₁₀
+---
 
+### Example 2:
+```
+8 >> 2
+```
+Binary:
+```
+1000  →  0010
+```
+Result:
+```
+(2)₁₀
+```
 
-**Result:** `4 & 8 = 0`
+---
 
-### Bitwise OR (`|`)
+## Mathematical Formulas
 
-The bitwise OR operator compares each bit of its first operand to the corresponding bit of its second operand. If either bit is 1, the corresponding result bit is set to 1. Otherwise, the result bit is set to 0.
+| Operator | Formula | Example | Result |
+|-----------|----------|----------|---------|
+| `<<` | a << b = a × 2ᵇ | 8 << 1 = 8 × 2¹ | (16)₁₀ |
+| `>>` | a >> b = a ÷ 2ᵇ | 8 >> 1 = 8 ÷ 2¹ | (4)₁₀ |
 
-#### Truth Table
-| A | B | A \| B |
-|:-:|:-:|:------:|
-| 0 | 0 |    0   |
-| 1 | 0 |    1   |
-| 0 | 1 |    1   |
-| 1 | 1 |    1   |
+---
 
-#### Example: `a = 4, b = 8`
-
-a = 4  →  0100
-b = 8  →  1000
-            |
-         ----
-          1100  → (12)₁₀
-
-**Verification:** `1100₂ = 2³ + 2² = 8 + 4 = 12`
-
-**Result:** `4 | 8 = 12`
-
-### Bitwise XOR (`^`) - Exclusive OR
-
-The bitwise XOR operator compares each bit of its first operand to the corresponding bit of its second operand. If the bits are different, the corresponding result bit is set to 1. If the bits are the same, the result bit is set to 0.
-
-* **Same bits give 0**
-* **Different bits give 1**
-
-#### Truth Table
-| A | B | A ^ B |
-|:-:|:-:|:-----:|
-| 0 | 0 |   0   |
-| 1 | 0 |   1   |
-| 0 | 1 |   1   |
-| 1 | 1 |   0   |
-
-#### Example 1: `a = 4, b = 8`
-
-a = 4  →  0100
-b = 8  →  1000
-            ^
-         ----
-          1100  → (12)₁₀
-
-**Result:** `4 ^ 8 = 12`
-
-#### Example 2: `c = 3, d = 7`
-
-c = 3  →  011
-d = 7  →  111
-            ^
-         ----
-          100  → (4)₁₀
-
-**Result:** `3 ^ 7 = 4` -->
+**Summary:**
+- Left Shift (`<<`) multiplies by 2 for each shift.
+- Right Shift (`>>`) divides by 2 for each shift.
