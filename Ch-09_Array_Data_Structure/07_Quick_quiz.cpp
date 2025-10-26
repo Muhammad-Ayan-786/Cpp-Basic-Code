@@ -8,6 +8,7 @@
 #include<iostream>
 using namespace std;
 
+// Global & Helper function to print array.
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
         cout << arr[i] << " ";
@@ -15,14 +16,21 @@ void printArray(int arr[], int size) {
     cout << endl;
 }
 
-// void sum_and_product (int arr[], int size) {
-//     printArray(arr, size);
-//     sumFUNC(arr, size);
+// Problem 1 Function ...
+// 🔹 Function declarations (prototypes)
+int sumFUNC(int[], int);
+int productFUNC(int[], int);
 
-//     productFUNC(arr, size); 
-//     printArray(arr, size);
-// }
+// Problem 1 Function ...
+void sum_and_product (int arr[], int size) {
+    int sumVal = sumFUNC(arr, size);
+    int prodVal = productFUNC(arr, size);
 
+    cout << "Sum: " << sumVal << endl;
+    cout << "Product: " << prodVal << endl;
+}
+
+// Problem 1 Function ...
 int sumFUNC (int sumArr[], int s) {
     int sumArrVal = 0;
     
@@ -33,6 +41,7 @@ int sumFUNC (int sumArr[], int s) {
     return sumArrVal;
 }
 
+// Problem 1 Function ...
 int productFUNC (int productArr[], int s) {
     int prodArrVal = 1;
 
@@ -44,14 +53,10 @@ int productFUNC (int productArr[], int s) {
 }
 
 int main() {
+    // Code for problem 1 ...
     int arr[] = {2, 4, 6, 8};
     int size = sizeof(arr) / sizeof(int);
-
-    int sumVal = sumFUNC(arr, size);
-    int prodVal = productFUNC(arr, size);
-
-    cout << sumVal << endl;
-    cout << prodVal << endl;
+    sum_and_product(arr, size);
 
     return 0;
 }
