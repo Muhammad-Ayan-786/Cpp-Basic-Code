@@ -6,13 +6,25 @@
 */
 
 #include<iostream>
+#include<climits> // For INT_MIN, INT_MAX
 using namespace std;
 
 // Global & Helper function to print array.
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {
-        cout << arr[i] << " ";
+        if (i == 0)
+            cout << "{";
+
+        if (i == 0); // Do nothing
+        else
+            cout << ", ";
+
+        cout << arr[i];
+
+        if (i == size - 1)
+            cout << "}";
     }
+
     cout << endl;
 }
 
@@ -52,11 +64,63 @@ int productFUNC (int productArr[], int s) {
     return prodArrVal;
 }
 
+
+
+// Problem 2 Function ...
+void swapMinMax (int arr[], int size) {
+    int smallest = INT_MAX;
+    int largest = INT_MIN;
+
+    int minIndex;
+    int maxIndex;
+
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] < smallest)
+        {
+            smallest = arr[i];
+            minIndex = i;
+        }
+        if (arr[i] > largest)
+        {
+            largest = arr[i];
+            maxIndex = i;
+        }
+    }
+
+    cout << "Smallest element: " << smallest << endl;
+    cout << "Smallest element index: " << minIndex << endl;
+
+    cout << "Largest element: " << largest << endl;
+    cout << "Largest element index: " << maxIndex << endl;
+
+    // Swaping the min value & max value with each other.
+    swap(arr[minIndex], arr[maxIndex]);
+}
+
 int main() {
     // Code for problem 1 ...
+    cout << "Problem 1:" << endl;
     int arr[] = {2, 4, 6, 8};
     int size = sizeof(arr) / sizeof(int);
+
+    printArray(arr, size);
     sum_and_product(arr, size);
+
+    cout << endl;
+
+    // Code for problem 2 ...
+    cout << "Problem 2:" << endl;
+    int arr2[] = {2, 4, 6, 8, 10};
+    int size2 = sizeof(arr2) / sizeof(int);
+
+    printArray(arr2, size2);
+    cout << endl;
+    swapMinMax(arr2, size2);
+    cout << endl;
+    printArray(arr2, size2);
+
+    cout << endl;
 
     return 0;
 }
