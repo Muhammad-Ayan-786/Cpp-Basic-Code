@@ -98,7 +98,40 @@ void swapMinMax (int arr[], int size) {
     swap(arr[minIndex], arr[maxIndex]);
 }
 
+
+
+// Problem 3 Function ...
+void printUniqueNumbers (int arr[], int size) {
+    cout << "Unique numbers in the array are: ";
+    for (int i = 0; i < size; i++) {
+
+        for (int j = i; j < size; j++)
+        {
+            if (arr[j] == arr[i])
+            {
+                cout << arr[j] << " ";
+            }
+        }
+    }
+
+    cout << endl;
+}
+
 int main() {
+    // Code for problem 3 ...
+    cout << "Problem 3:" << endl;
+    int arr3[] = {2, 3, 8, 5, 2, 4};
+    int size3 = sizeof(arr3) / sizeof(int);
+
+    printArray(arr3, size3);
+    printUniqueNumbers(arr3, size3);
+
+
+
+
+
+
+    /*
     // Code for problem 1 ...
     cout << "Problem 1:" << endl;
     int arr[] = {2, 4, 6, 8};
@@ -108,7 +141,9 @@ int main() {
     sum_and_product(arr, size);
 
     cout << endl;
+    */
 
+    /*
     // Code for problem 2 ...
     cout << "Problem 2:" << endl;
     int arr2[] = {2, 4, 6, 8, 10};
@@ -121,6 +156,7 @@ int main() {
     printArray(arr2, size2);
 
     cout << endl;
+    */
 
     return 0;
 }
