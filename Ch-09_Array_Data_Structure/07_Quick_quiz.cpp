@@ -125,7 +125,22 @@ void printUniqueNumbers (int arr[], int size) {
     cout << endl;
 }
 
+
+// Problem 4 Function ...
+void printIntersection(int arr1[], int size1, int arr2[], int size2) {}
+
 int main() {
+    // Code for problem 4 ...
+    cout << "Problem 4:" << endl;
+    int arr4_1[] = {2, 4, 6, 8, 10};
+    int size4_1 = sizeof(arr4_1) / sizeof(int);
+
+    int arr4_2[] = {3, 4, 5, 6, 7};
+    int size4_2 = sizeof(arr4_2) / sizeof(int);
+
+    printArray(arr4_1, size4_1);
+    printArray(arr4_2, size4_2);
+
     /*
     // Code for problem 1 ...
     cout << "Problem 1:" << endl;
